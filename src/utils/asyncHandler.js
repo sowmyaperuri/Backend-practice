@@ -1,6 +1,6 @@
 
 const asyncHandler = (requestHandler) => {
-    (req, res, next) => {
+    return (req, res, next) => {
         Promise.resolve(requestHandler(req, res, next))
         .catch((err) => next(err)) //Promise.resolve(value) is a static method called directly on the global Promise class. 
         // You use it to take a regular piece of data (like a string, object, or number) and immediately wrap it inside a fulfilled promise structure.
